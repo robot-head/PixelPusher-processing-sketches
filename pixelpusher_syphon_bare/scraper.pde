@@ -19,7 +19,6 @@ void scrape() {
       for (int stripy = 0; stripy < strip.getLength(); stripy++) {
         color c = pixels[((strips.size() - (stripx + 1))*xscale) + (stripy*yscale*width)];
         Pixel p = new Pixel((byte)red(c), (byte)green(c), (byte)blue(c));
-        //Pixel p = new Pixel((byte)255, (byte)255, (byte)255);
         strip.setPixel(p, stripy);
       }
       stripx++;
