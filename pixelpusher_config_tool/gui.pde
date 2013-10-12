@@ -32,13 +32,13 @@ public void panel1_Click1(GPanel source, GEvent event) { //_CODE_:configPanel:48
   
 } //_CODE_:configPanel:481018:
 
-public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:usbHoldOffTextField:978875:
-  
-} //_CODE_:usbHoldOffTextField:978875:
-
 public void saveButtonClick(GButton source, GEvent event) { //_CODE_:saveButton:202835:
   
 } //_CODE_:saveButton:202835:
+
+public void custom_slider1_change1(GCustomSlider source, GEvent event) { //_CODE_:usbHoldoffSlider:271887:
+  holdoffValueLabel.setText(usbHoldoffSlider.getValueS());
+} //_CODE_:usbHoldoffSlider:271887:
 
 
 
@@ -69,17 +69,24 @@ public void createGUI(){
   label1.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
   label1.setText("USB Reset Holdoff (ms)");
   label1.setOpaque(false);
-  usbHoldOffTextField = new GTextField(this, 160, 30, 160, 20, G4P.SCROLLBARS_NONE);
-  usbHoldOffTextField.setDefaultText("1020");
-  usbHoldOffTextField.setOpaque(true);
-  usbHoldOffTextField.addEventHandler(this, "textfield1_change1");
   saveButton = new GButton(this, 270, 370, 80, 30);
   saveButton.setText("Save");
   saveButton.setTextBold();
   saveButton.addEventHandler(this, "saveButtonClick");
+  usbHoldoffSlider = new GCustomSlider(this, 160, 30, 350, 20, "grey_blue");
+  usbHoldoffSlider.setLimits(1020, 0, 1020);
+  usbHoldoffSlider.setNbrTicks(255);
+  usbHoldoffSlider.setStickToTicks(true);
+  usbHoldoffSlider.setNumberFormat(G4P.INTEGER, 0);
+  usbHoldoffSlider.setOpaque(false);
+  usbHoldoffSlider.addEventHandler(this, "custom_slider1_change1");
+  holdoffValueLabel = new GLabel(this, 520, 30, 90, 20);
+  holdoffValueLabel.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
+  holdoffValueLabel.setOpaque(false);
   configPanel.addControl(label1);
-  configPanel.addControl(usbHoldOffTextField);
   configPanel.addControl(saveButton);
+  configPanel.addControl(usbHoldoffSlider);
+  configPanel.addControl(holdoffValueLabel);
 }
 
 // Variable declarations 
@@ -89,6 +96,7 @@ GLabel portLabel;
 GLabel verLabel; 
 GPanel configPanel; 
 GLabel label1; 
-GTextField usbHoldOffTextField; 
 GButton saveButton; 
+GCustomSlider usbHoldoffSlider; 
+GLabel holdoffValueLabel; 
 
