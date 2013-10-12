@@ -29,15 +29,15 @@ public void detectBtnClick(GButton source, GEvent event) { //_CODE_:detectBtn:39
 } //_CODE_:detectBtn:397567:
 
 public void panel1_Click1(GPanel source, GEvent event) { //_CODE_:configPanel:481018:
-  println("configPanel - GPanel event occured " + System.currentTimeMillis()%10000000 );
+  
 } //_CODE_:configPanel:481018:
 
 public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:usbHoldOffTextField:978875:
-  println("textfield1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
+  
 } //_CODE_:usbHoldOffTextField:978875:
 
-public void button1_click1(GButton source, GEvent event) { //_CODE_:saveButton:202835:
-  println("saveButton - GButton event occured " + System.currentTimeMillis()%10000000 );
+public void saveButtonClick(GButton source, GEvent event) { //_CODE_:saveButton:202835:
+  
 } //_CODE_:saveButton:202835:
 
 
@@ -76,7 +76,7 @@ public void createGUI(){
   saveButton = new GButton(this, 270, 370, 80, 30);
   saveButton.setText("Save");
   saveButton.setTextBold();
-  saveButton.addEventHandler(this, "button1_click1");
+  saveButton.addEventHandler(this, "saveButtonClick");
   configPanel.addControl(label1);
   configPanel.addControl(usbHoldOffTextField);
   configPanel.addControl(saveButton);
