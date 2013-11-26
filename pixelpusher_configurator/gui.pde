@@ -5,9 +5,9 @@
  * designer and care should be taken when editing this file.
  * Only add/edit code inside the event handlers i.e. only
  * use lines between the matching comment tags. e.g.
-
+ 
  void myBtnEvents(GButton button) { //_CODE_:button1:12356:
-     // It is safe to enter your event code here  
+ // It is safe to enter your event code here  
  } //_CODE_:button1:12356:
  
  * Do not rename this tab!
@@ -17,15 +17,15 @@
 public void stripsAttached_change1(GCustomSlider source, GEvent event) { //_CODE_:stripsAttached:335493:
   println("stripsAttached - GCustomSlider event occured " + System.currentTimeMillis()%10000000 );
   model.strips_attached = source.getValueI();
-  
 } //_CODE_:stripsAttached:335493:
 
 public void controller_change1(GTextField source, GEvent event) { //_CODE_:controller:254485:
   println("controller - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.controller = Integer.parseInt(source.getText());
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:controller:254485:
 
@@ -33,8 +33,9 @@ public void group_change1(GTextField source, GEvent event) { //_CODE_:group:9024
   println("group - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.group = Integer.parseInt(source.getText());
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:group:902407:
 
@@ -44,7 +45,6 @@ public void turboMode_clicked1(GCheckbox source, GEvent event) { //_CODE_:turboM
     model.turbo_mode = true;
   else
     model.turbo_mode = false;
-  
 } //_CODE_:turboMode:863928:
 
 public void turboSpeed_change1(GCustomSlider source, GEvent event) { //_CODE_:turboSpeed_slider1:495170:
@@ -136,8 +136,9 @@ public void pixelsPerStrip_change2(GTextField source, GEvent event) { //_CODE_:p
   println("pixelsPerStrip - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.pixelsperstrip = Integer.parseInt(source.getText());
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:pixelsPerStrip:347862:
 
@@ -147,33 +148,35 @@ public void blankOnIdle_clicked1(GCheckbox source, GEvent event) { //_CODE_:blan
     model.blank_on_idle = true;
   else
     model.blank_on_idle = false;
-  
 } //_CODE_:blankOnIdle:479519:
 
 public void blank1_change1(GTextField source, GEvent event) { //_CODE_:blank1:230222:
   println("blank1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.blank[0] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank1:230222:
 
 public void blank2_change1(GTextField source, GEvent event) { //_CODE_:blank2:279194:
   println("blank2 - GTextField event occured " + System.currentTimeMillis()%10000000 );
-    try {
+  try {
     model.blank[1] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank2:279194:
 
 public void blank3_change1(GTextField source, GEvent event) { //_CODE_:blank3:514345:
   println("blank3 - GTextField event occured " + System.currentTimeMillis()%10000000 );
-    try {
+  try {
     model.blank[2] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank3:514345:
 
@@ -181,8 +184,9 @@ public void blank4_change1(GTextField source, GEvent event) { //_CODE_:blank4:90
   println("blank4 - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.blank[3] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank4:908652:
 
@@ -190,17 +194,19 @@ public void blank5_change1(GTextField source, GEvent event) { //_CODE_:blank5:26
   println("textfield4 - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.blank[4] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank5:269602:
 
 public void blank6_change1(GTextField source, GEvent event) { //_CODE_:blank6:630141:
   println("textfield5 - GTextField event occured " + System.currentTimeMillis()%10000000 );
-   try {
+  try {
     model.blank[5] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank6:630141:
 
@@ -208,8 +214,9 @@ public void blank7_change1(GTextField source, GEvent event) { //_CODE_:blank7:37
   println("textfield6 - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.blank[6] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank7:378599:
 
@@ -217,8 +224,9 @@ public void blank8_change1(GTextField source, GEvent event) { //_CODE_:blank8:47
   println("textfield7 - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.blank[7] = Integer.parseInt(source.getText(), 16);
-  } catch (NumberFormatException nfe) {
-     // ignore this exception 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore this exception
   }
 } //_CODE_:blank8:471164:
 
@@ -303,8 +311,9 @@ public void artnet_universe_change1(GTextField source, GEvent event) { //_CODE_:
   println("textfield1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.artnet_universe = Integer.parseInt(source.getText());
-  } catch (NumberFormatException nfe) {
-     // ignore 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore
   }
 } //_CODE_:artnet_universe:299380:
 
@@ -312,8 +321,9 @@ public void artnet_channel_change2(GTextField source, GEvent event) { //_CODE_:a
   println("artnet_channel - GTextField event occured " + System.currentTimeMillis()%10000000 );
   try {
     model.artnet_channel = Integer.parseInt(source.getText());
-  } catch (NumberFormatException nfe) {
-     // ignore 
+  } 
+  catch (NumberFormatException nfe) {
+    // ignore
   }
 } //_CODE_:artnet_channel:826890:
 
@@ -337,31 +347,36 @@ public void write_click1(GButton source, GEvent event) { //_CODE_:write_button:8
   println(model.toString());
   if (model.filename == null) {
     // create a file chooser 
-  final JFileChooser fc = new JFileChooser(); 
-   
-  // in response to a button click: 
-  int returnVal = fc.showSaveDialog(this); 
-   
-  
-  if (returnVal == JFileChooser.APPROVE_OPTION) { 
-    try {
-      File file = fc.getSelectedFile(); 
-      println(file.getCanonicalPath());
-      model.filename = file.getCanonicalPath();
-    } catch (IOException ioe) {
-       // nada
+    final JFileChooser fc = new JFileChooser(); 
+
+    // in response to a button click: 
+    int returnVal = fc.showSaveDialog(this); 
+
+
+    if (returnVal == JFileChooser.APPROVE_OPTION) { 
+      try {
+        File file = fc.getSelectedFile(); 
+        println(file.getCanonicalPath());
+        model.filename = file.getCanonicalPath();
+      } 
+      catch (IOException ioe) {
+        // nada
+      }
+    } 
+    else { 
+      println("Save command cancelled by user.");
     }
-    
-  } else { 
-    println("Save command cancelled by user."); 
-  }
   }
   try {
     PrintWriter out = new PrintWriter(model.filename);
     out.println(model.toString());
+
+    println("pixel.rc length = "+ model.toString().length());
+
     out.close();
-  } catch(FileNotFoundException fnfe) {
-     // this can't happen. 
+  } 
+  catch(FileNotFoundException fnfe) {
+    // this can't happen.
   }
 } //_CODE_:write_button:890092:
 
@@ -369,22 +384,23 @@ public void file_location_button1_click1(GButton source, GEvent event) { //_CODE
   println("file_location_button - GButton event occured " + System.currentTimeMillis()%10000000 );
   // create a file chooser 
   final JFileChooser fc = new JFileChooser(); 
-   
+
   // in response to a button click: 
   int returnVal = fc.showSaveDialog(this); 
-   
-  
+
+
   if (returnVal == JFileChooser.APPROVE_OPTION) { 
     try {
       File file = fc.getSelectedFile(); 
       println(file.getCanonicalPath());
       model.filename = file.getCanonicalPath();
-    } catch (IOException ioe) {
-       //
+    } 
+    catch (IOException ioe) {
+      //
     }
-    
-  } else { 
-    println("Save command cancelled by user."); 
+  } 
+  else { 
+    println("Save command cancelled by user.");
   }
 } //_CODE_:file_location_button:203558:
 
@@ -392,11 +408,11 @@ public void file_location_button1_click1(GButton source, GEvent event) { //_CODE
 
 // Create all the GUI controls. 
 // autogenerated do not edit
-public void createGUI(){
+public void createGUI() {
   G4P.messagesEnabled(false);
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setCursor(ARROW);
-  if(frame != null)
+  if (frame != null)
     frame.setTitle("PixelPusher Configurator");
   stripsAttached = new GCustomSlider(this, 110, 70, 142, 51, "grey_blue");
   stripsAttached.setShowValue(true);
