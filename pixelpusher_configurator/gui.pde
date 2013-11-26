@@ -54,82 +54,82 @@ public void turboSpeed_change1(GCustomSlider source, GEvent event) { //_CODE_:tu
 
 public void stripType1_click1(GDropList source, GEvent event) { //_CODE_:stripType1:439725:
   println("stripType1 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[0] = source.getSelectedText();
+  model.stripType[0] = source.getSelectedIndex();
 } //_CODE_:stripType1:439725:
 
 public void stripType2_click1(GDropList source, GEvent event) { //_CODE_:stripType2:841569:
   println("stripType2 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[1] = source.getSelectedText();
+  model.stripType[1] = source.getSelectedIndex();
 } //_CODE_:stripType2:841569:
 
 public void stripType3_click1(GDropList source, GEvent event) { //_CODE_:stripType3:932479:
   println("stripType3 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[2] = source.getSelectedText();
+  model.stripType[2] = source.getSelectedIndex();
 } //_CODE_:stripType3:932479:
 
 public void stripType4_click1(GDropList source, GEvent event) { //_CODE_:stripType4:750214:
   println("stripType4 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[3] = source.getSelectedText();
+  model.stripType[3] = source.getSelectedIndex();
 } //_CODE_:stripType4:750214:
 
 public void stripType5_click1(GDropList source, GEvent event) { //_CODE_:stripType5:565113:
   println("stripType5 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[4] = source.getSelectedText();
+  model.stripType[4] = source.getSelectedIndex();
 } //_CODE_:stripType5:565113:
 
 public void stripType6_click1(GDropList source, GEvent event) { //_CODE_:stripType6:954858:
   println("stripType6 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[5] = source.getSelectedText();
+  model.stripType[5] = source.getSelectedIndex();
 } //_CODE_:stripType6:954858:
 
 public void stripType7_click1(GDropList source, GEvent event) { //_CODE_:stripType7:382677:
   println("stripType7 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[6] = source.getSelectedText();
+  model.stripType[6] = source.getSelectedIndex();
 } //_CODE_:stripType7:382677:
 
 public void stripType8_click1(GDropList source, GEvent event) { //_CODE_:stripType8:531216:
   println("stripType8 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.stripType[7] = source.getSelectedText();
+  model.stripType[7] = source.getSelectedIndex();
 } //_CODE_:stripType8:531216:
 
 public void order1_click1(GDropList source, GEvent event) { //_CODE_:order1:200593:
   println("order1 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[0] = source.getSelectedText();
+  model.order[0] = source.getSelectedIndex();
 } //_CODE_:order1:200593:
 
 public void order2_click1(GDropList source, GEvent event) { //_CODE_:order2:919384:
   println("order2 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[1] = source.getSelectedText();
+  model.order[1] = source.getSelectedIndex();
 } //_CODE_:order2:919384:
 
 public void order3_click1(GDropList source, GEvent event) { //_CODE_:order3:369108:
   println("order3 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[2] = source.getSelectedText();
+  model.order[2] = source.getSelectedIndex();
 } //_CODE_:order3:369108:
 
 public void order4_click1(GDropList source, GEvent event) { //_CODE_:order4:818673:
   println("order4 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[3] = source.getSelectedText();
+  model.order[3] = source.getSelectedIndex();
 } //_CODE_:order4:818673:
 
 public void order5_click1(GDropList source, GEvent event) { //_CODE_:order5:787941:
   println("order5 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[4] = source.getSelectedText();
+  model.order[4] = source.getSelectedIndex();
 } //_CODE_:order5:787941:
 
 public void order6_click1(GDropList source, GEvent event) { //_CODE_:order6:481405:
   println("order6 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[5] = source.getSelectedText();
+  model.order[5] = source.getSelectedIndex();
 } //_CODE_:order6:481405:
 
 public void order7_click1(GDropList source, GEvent event) { //_CODE_:order7:997118:
   println("order7 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[6] = source.getSelectedText();
+  model.order[6] = source.getSelectedIndex();
 } //_CODE_:order7:997118:
 
 public void order8_click1(GDropList source, GEvent event) { //_CODE_:order8:939168:
   println("order8 - GDropList event occured " + System.currentTimeMillis()%10000000 );
-  model.order[7] = source.getSelectedText();
+  model.order[7] = source.getSelectedIndex();
 } //_CODE_:order8:939168:
 
 public void pixelsPerStrip_change2(GTextField source, GEvent event) { //_CODE_:pixelsPerStrip:347862:
@@ -291,35 +291,50 @@ public void dhcp1_clicked1(GCheckbox source, GEvent event) { //_CODE_:dhcp:72279
   if (source.isSelected())
     model.dhcp = true;
   else
-    model.dhcp= false;
+    model.dhcp = false;
 } //_CODE_:dhcp:722796:
 
 public void dhcp_slider1_change1(GCustomSlider source, GEvent event) { //_CODE_:dhcp_slider1:698280:
   println("custom_slider1 - GCustomSlider event occured " + System.currentTimeMillis()%10000000 );
+  model.retries = source.getValueI();
 } //_CODE_:dhcp_slider1:698280:
 
 public void artnet_universe_change1(GTextField source, GEvent event) { //_CODE_:artnet_universe:299380:
   println("textfield1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
+  try {
+    model.artnet_universe = Integer.parseInt(source.getText());
+  } catch (NumberFormatException nfe) {
+     // ignore 
+  }
 } //_CODE_:artnet_universe:299380:
 
 public void artnet_channel_change2(GTextField source, GEvent event) { //_CODE_:artnet_channel:826890:
   println("artnet_channel - GTextField event occured " + System.currentTimeMillis()%10000000 );
+  try {
+    model.artnet_channel = Integer.parseInt(source.getText());
+  } catch (NumberFormatException nfe) {
+     // ignore 
+  }
 } //_CODE_:artnet_channel:826890:
 
 public void ether_change3(GTextField source, GEvent event) { //_CODE_:ether:666582:
   println("ether - GTextField event occured " + System.currentTimeMillis()%10000000 );
+  model.ether = source.getText();
 } //_CODE_:ether:666582:
 
 public void netmask_change1(GTextField source, GEvent event) { //_CODE_:netmask:532911:
   println("netmask - GTextField event occured " + System.currentTimeMillis()%10000000 );
+  model.netmask = source.getText();
 } //_CODE_:netmask:532911:
 
 public void gateway_change1(GTextField source, GEvent event) { //_CODE_:gateway:924214:
   println("gateway - GTextField event occured " + System.currentTimeMillis()%10000000 );
+  model.gateway = source.getText();
 } //_CODE_:gateway:924214:
 
 public void write_click1(GButton source, GEvent event) { //_CODE_:write_button:890092:
   println("write_button - GButton event occured " + System.currentTimeMillis()%10000000 );
+  println(model.toString());
 } //_CODE_:write_button:890092:
 
 
@@ -335,7 +350,7 @@ public void createGUI(){
   stripsAttached = new GCustomSlider(this, 110, 70, 142, 51, "grey_blue");
   stripsAttached.setShowValue(true);
   stripsAttached.setShowLimits(true);
-  stripsAttached.setLimits(1, 1, 8);
+  stripsAttached.setLimits(8, 1, 8);
   stripsAttached.setNbrTicks(8);
   stripsAttached.setStickToTicks(true);
   stripsAttached.setShowTicks(true);
@@ -369,7 +384,7 @@ public void createGUI(){
   turboSpeed_slider1.setShowValue(true);
   turboSpeed_slider1.setShowLimits(true);
   turboSpeed_slider1.setLimits(16, 1, 24);
-  turboSpeed_slider1.setStickToTicks(true);
+  turboSpeed_slider1.setNbrTicks(8);
   turboSpeed_slider1.setNumberFormat(G4P.INTEGER, 0);
   turboSpeed_slider1.setOpaque(false);
   turboSpeed_slider1.addEventHandler(this, "turboSpeed_change1");
@@ -572,8 +587,8 @@ public void createGUI(){
   label17.setText("Channel");
   label17.setOpaque(false);
   ether = new GTextField(this, 90, 710, 160, 30, G4P.SCROLLBARS_NONE);
-  ether.setText("198.162.1.1");
-  ether.setDefaultText("198.162.1.1");
+  ether.setText("198.162.1.137");
+  ether.setDefaultText("198.162.1.137");
   ether.setOpaque(true);
   ether.addEventHandler(this, "ether_change3");
   label27 = new GLabel(this, 10, 710, 80, 30);
