@@ -19,6 +19,8 @@ class ConfigModel {
    String netmask;
    String gateway;
    
+   String filename;
+   
    private String[] stripTypes = { "lpd8806", "lpd6803", "ws2801", "ws2811", "tlc59711", "p9813", "sd600a" };
    private String[] orders = {"rgb", "rbg", "grb", "gbr", "brg", "bgr" };
   

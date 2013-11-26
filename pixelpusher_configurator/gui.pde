@@ -335,7 +335,58 @@ public void gateway_change1(GTextField source, GEvent event) { //_CODE_:gateway:
 public void write_click1(GButton source, GEvent event) { //_CODE_:write_button:890092:
   println("write_button - GButton event occured " + System.currentTimeMillis()%10000000 );
   println(model.toString());
+  if (model.filename == null) {
+    // create a file chooser 
+  final JFileChooser fc = new JFileChooser(); 
+   
+  // in response to a button click: 
+  int returnVal = fc.showSaveDialog(this); 
+   
+  
+  if (returnVal == JFileChooser.APPROVE_OPTION) { 
+    try {
+      File file = fc.getSelectedFile(); 
+      println(file.getCanonicalPath());
+      model.filename = file.getCanonicalPath();
+    } catch (IOException ioe) {
+       // nada
+    }
+    
+  } else { 
+    println("Save command cancelled by user."); 
+  }
+  }
+  try {
+    PrintWriter out = new PrintWriter(model.filename);
+    out.println(model.toString());
+    out.close();
+  } catch(FileNotFoundException fnfe) {
+     // this can't happen. 
+  }
 } //_CODE_:write_button:890092:
+
+public void file_location_button1_click1(GButton source, GEvent event) { //_CODE_:file_location_button:203558:
+  println("file_location_button - GButton event occured " + System.currentTimeMillis()%10000000 );
+  // create a file chooser 
+  final JFileChooser fc = new JFileChooser(); 
+   
+  // in response to a button click: 
+  int returnVal = fc.showSaveDialog(this); 
+   
+  
+  if (returnVal == JFileChooser.APPROVE_OPTION) { 
+    try {
+      File file = fc.getSelectedFile(); 
+      println(file.getCanonicalPath());
+      model.filename = file.getCanonicalPath();
+    } catch (IOException ioe) {
+       //
+    }
+    
+  } else { 
+    println("Save command cancelled by user."); 
+  }
+} //_CODE_:file_location_button:203558:
 
 
 
@@ -609,10 +660,13 @@ public void createGUI(){
   label28 = new GLabel(this, 10, 760, 80, 30);
   label28.setText("Gateway");
   label28.setOpaque(false);
-  write_button = new GButton(this, 580, 760, 210, 50);
+  write_button = new GButton(this, 579, 788, 210, 50);
   write_button.setText("Write to file");
   write_button.setTextBold();
   write_button.addEventHandler(this, "write_click1");
+  file_location_button = new GButton(this, 580, 719, 209, 56);
+  file_location_button.setText("Save to...");
+  file_location_button.addEventHandler(this, "file_location_button1_click1");
 }
 
 // Variable declarations 
@@ -684,4 +738,5 @@ GTextField netmask;
 GTextField gateway; 
 GLabel label28; 
 GButton write_button; 
+GButton file_location_button; 
 

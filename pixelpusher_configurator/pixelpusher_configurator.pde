@@ -1,7 +1,10 @@
 // Need G4P library
 import g4p_controls.*;
+import java.io.*;
+import javax.swing.*;
 
 ConfigModel model;
+
 
 public void setup(){
   size(800, 850, P3D);
