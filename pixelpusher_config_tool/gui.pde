@@ -45,6 +45,7 @@ public void fileselect_button1_click1(GButton source, GEvent event) { //_CODE_:f
   
   final JFileChooser fc = new JFileChooser(); 
   println("Selecting a file.");
+  println("Selecting a file.");
   // in response to a button click: 
   int returnVal = fc.showOpenDialog(this); 
 
