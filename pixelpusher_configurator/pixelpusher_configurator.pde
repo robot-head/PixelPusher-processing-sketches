@@ -18,7 +18,6 @@ public void setup(){
 
 public void draw(){
   background(230);
-  
 }
 
 // Use this method to add additional statements
