@@ -69,8 +69,6 @@ class ConfigModel {
         s.append("strips_attached="+Integer.toString(strips_attached)+"\n");
      if (pixelsperstrip != 240)
         s.append("pixels="+Integer.toString(pixelsperstrip)+"\n");
-     if (blank_on_idle)
-        s.append("blank_on_idle=1\n");
      for (int i=0; i<8; i++)
         if (stripType[i]!=0)
           s.append("strip"+Integer.toString(i+1)+"="+stripTypes[stripType[i]]+"\n");
