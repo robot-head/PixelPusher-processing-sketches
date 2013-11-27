@@ -33,12 +33,33 @@ public void panel1_Click1(GPanel source, GEvent event) { //_CODE_:configPanel:48
 } //_CODE_:configPanel:481018:
 
 public void saveButtonClick(GButton source, GEvent event) { //_CODE_:saveButton:202835:
-  
+  writeConfig(pusher);
 } //_CODE_:saveButton:202835:
 
 public void custom_slider1_change1(GCustomSlider source, GEvent event) { //_CODE_:usbHoldoffSlider:271887:
   holdoffValueLabel.setText(usbHoldoffSlider.getValueS());
 } //_CODE_:usbHoldoffSlider:271887:
+
+public void fileselect_button1_click1(GButton source, GEvent event) { //_CODE_:fileselect_button1:368389:
+  println("fileselect_button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
+  
+  final JFileChooser fc = new JFileChooser(); 
+  println("Selecting a file.");
+  // in response to a button click: 
+  int returnVal = fc.showOpenDialog(this); 
+
+  if (returnVal == JFileChooser.APPROVE_OPTION) { 
+    try {
+      File file = fc.getSelectedFile(); 
+      println(file.getCanonicalPath());
+      filename = file.getCanonicalPath();
+      pathLabel.setText(filename);
+    } 
+    catch (IOException ioe) {
+      //
+    }
+  }
+} //_CODE_:fileselect_button1:368389:
 
 
 
@@ -69,7 +90,7 @@ public void createGUI(){
   label1.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
   label1.setText("USB Reset Holdoff (ms)");
   label1.setOpaque(false);
-  saveButton = new GButton(this, 270, 370, 80, 30);
+  saveButton = new GButton(this, 524, 371, 80, 30);
   saveButton.setText("Save");
   saveButton.setTextBold();
   saveButton.addEventHandler(this, "saveButtonClick");
@@ -83,10 +104,18 @@ public void createGUI(){
   holdoffValueLabel = new GLabel(this, 520, 30, 90, 20);
   holdoffValueLabel.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
   holdoffValueLabel.setOpaque(false);
+  fileselect_button1 = new GButton(this, 484, 324, 120, 30);
+  fileselect_button1.setText("Select pixel.rc file");
+  fileselect_button1.addEventHandler(this, "fileselect_button1_click1");
+  pathLabel = new GLabel(this, 161, 329, 309, 20);
+  pathLabel.setText("No file selected");
+  pathLabel.setOpaque(false);
   configPanel.addControl(label1);
   configPanel.addControl(saveButton);
   configPanel.addControl(usbHoldoffSlider);
   configPanel.addControl(holdoffValueLabel);
+  configPanel.addControl(fileselect_button1);
+  configPanel.addControl(pathLabel);
 }
 
 // Variable declarations 
@@ -99,4 +128,6 @@ GLabel label1;
 GButton saveButton; 
 GCustomSlider usbHoldoffSlider; 
 GLabel holdoffValueLabel; 
+GButton fileselect_button1; 
+GLabel pathLabel; 
 

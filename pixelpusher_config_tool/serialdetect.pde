@@ -8,6 +8,32 @@ class DetectedPusher {
   }
 }
 
+void writeConfig(DetectedPusher dp) {
+   Serial s = new Serial(this, dp.port, 115200);
+   s.write("\r\nHoldoff"+Integer.toString(usbHoldoffSlider.getValueI()/4, 16));
+   
+   if (filename != null) {
+     try {
+       s.write("\r\nConfig");
+       BufferedReader reader = new BufferedReader(new FileReader(filename));
+       for (int i=0; i<1023; i++) {
+           int c = reader.read();
+           if (c == -1) {
+             s.write(255);
+             break;
+           }
+           s.write(c);
+         }
+      } catch (FileNotFoundException fnfe) {
+         s.write(255); // just in case 
+      } catch (IOException ioe) {
+         s.write(255);
+      } finally {
+         s.stop(); 
+      }
+   }
+}
+
 DetectedPusher DetectPusher() {
   Serial s;
   char lf = '\n';
@@ -24,7 +50,7 @@ DetectedPusher DetectPusher() {
       s.clear();
       delay(2000);
       while (s.available () > 0) {
-        String r = s.readStringUntil(lf);
+        String r = s.readString();
         if (r != null) {
           Matcher m = vrx.matcher(r);
           if (m.find()) {
@@ -33,6 +59,7 @@ DetectedPusher DetectPusher() {
           }
         }
       }
+      s.stop();
     } 
     catch (Exception ex) {
       //println("Couldn't open port " + pn);
