@@ -8,6 +8,29 @@ class DetectedPusher {
   }
 }
 
+void eraseConfig(DetectedPusher dp) {
+   Serial s = new Serial(this, dp.port, 115200);
+
+     try {
+       s.write("\r\nConfig");
+       s.write(255);
+       s.write(255);
+       s.write(255);
+      } finally {
+         s.stop(); 
+      }
+}
+
+void reboot(DetectedPusher dp) {
+   Serial s = new Serial(this, dp.port, 115200);
+
+     try {
+       s.write("\r\nReboot");
+      } finally {
+         s.stop(); 
+      }
+}
+
 void writeConfig(DetectedPusher dp) {
    Serial s = new Serial(this, dp.port, 115200);
    s.write("\r\nHoldoff"+Integer.toString(usbHoldoffSlider.getValueI()/4, 16));
@@ -32,6 +55,11 @@ void writeConfig(DetectedPusher dp) {
          s.stop(); 
       }
    }
+}
+
+void enterReflash(DetectedPusher dp) {
+    Serial s = new Serial(this, dp.port, 115200);
+    s.write("\r\nOrange");
 }
 
 DetectedPusher DetectPusher() {

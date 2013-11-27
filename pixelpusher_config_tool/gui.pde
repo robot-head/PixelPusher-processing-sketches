@@ -61,6 +61,22 @@ public void fileselect_button1_click1(GButton source, GEvent event) { //_CODE_:f
   }
 } //_CODE_:fileselect_button1:368389:
 
+public void reflash_button1_click1(GButton source, GEvent event) { //_CODE_:reflash_button1:952778:
+  println("reflash_button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
+  enterReflash(pusher);
+  reflashLabel.setText("In reflash mode");
+} //_CODE_:reflash_button1:952778:
+
+public void remove_button1_click1(GButton source, GEvent event) { //_CODE_:remove_button1:409098:
+  println("remove_button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
+  eraseConfig(pusher);
+} //_CODE_:remove_button1:409098:
+
+public void reboot_button1_click1(GButton source, GEvent event) { //_CODE_:reboot_button1:322829:
+  println("reboot_button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
+  reboot(pusher);
+} //_CODE_:reboot_button1:322829:
+
 
 
 // Create all the GUI controls. 
@@ -80,7 +96,7 @@ public void createGUI(){
   verLabel = new GLabel(this, 500, 20, 130, 20);
   verLabel.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
   verLabel.setOpaque(false);
-  configPanel = new GPanel(this, 10, 60, 620, 410, "Pusher Config");
+  configPanel = new GPanel(this, 12, 60, 620, 410, "Pusher Config");
   configPanel.setCollapsible(false);
   configPanel.setDraggable(false);
   configPanel.setText("Pusher Config");
@@ -103,6 +119,7 @@ public void createGUI(){
   usbHoldoffSlider.addEventHandler(this, "custom_slider1_change1");
   holdoffValueLabel = new GLabel(this, 520, 30, 90, 20);
   holdoffValueLabel.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
+  holdoffValueLabel.setText("1020");
   holdoffValueLabel.setOpaque(false);
   fileselect_button1 = new GButton(this, 484, 324, 120, 30);
   fileselect_button1.setText("Select pixel.rc file");
@@ -110,12 +127,27 @@ public void createGUI(){
   pathLabel = new GLabel(this, 161, 329, 309, 20);
   pathLabel.setText("No file selected");
   pathLabel.setOpaque(false);
+  reflash_button1 = new GButton(this, 484, 276, 120, 30);
+  reflash_button1.setText("Enter reflash mode");
+  reflash_button1.addEventHandler(this, "reflash_button1_click1");
+  reflashLabel = new GLabel(this, 161, 281, 310, 20);
+  reflashLabel.setOpaque(false);
+  remove_button1 = new GButton(this, 485, 227, 119, 30);
+  remove_button1.setText("Remove pixel.rc");
+  remove_button1.addEventHandler(this, "remove_button1_click1");
+  reboot_button1 = new GButton(this, 485, 180, 120, 30);
+  reboot_button1.setText("Reboot");
+  reboot_button1.addEventHandler(this, "reboot_button1_click1");
   configPanel.addControl(label1);
   configPanel.addControl(saveButton);
   configPanel.addControl(usbHoldoffSlider);
   configPanel.addControl(holdoffValueLabel);
   configPanel.addControl(fileselect_button1);
   configPanel.addControl(pathLabel);
+  configPanel.addControl(reflash_button1);
+  configPanel.addControl(reflashLabel);
+  configPanel.addControl(remove_button1);
+  configPanel.addControl(reboot_button1);
 }
 
 // Variable declarations 
@@ -130,4 +162,8 @@ GCustomSlider usbHoldoffSlider;
 GLabel holdoffValueLabel; 
 GButton fileselect_button1; 
 GLabel pathLabel; 
+GButton reflash_button1; 
+GLabel reflashLabel; 
+GButton remove_button1; 
+GButton reboot_button1; 
 
