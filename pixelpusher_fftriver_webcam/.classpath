@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="/org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6"/>
+	<classpathentry kind="lib" path="C:/Users/Matthew Stone/.eclipse/org.eclipse.platform_4.2.0_248562372/plugins/processing.plugin.core_0.2.5.1/Resources/lib/core.jar"/>
+	<classpathentry kind="output" path="generated/compiler"/>
+</classpath>
