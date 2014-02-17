@@ -13,8 +13,8 @@ class ImageArray {
     
   
     // board setting
-    int canvas_cols = 60; // breite des boards
-    int canvas_rows = 64; // höhe des boards (wird für bounce modus gebraucht)
+    int canvas_cols = 240; // breite des boards
+    int canvas_rows = 8; // höhe des boards (wird für bounce modus gebraucht)
 
 
     // ###########################################################
@@ -90,7 +90,7 @@ class ImageArray {
       if (text_config.length > 3 && !text_config[3].equals("")) {
         textsize = int(text_config[3]);
       } else {
-        textsize = 16;
+        textsize = 8;
       }
       
       String fontname;

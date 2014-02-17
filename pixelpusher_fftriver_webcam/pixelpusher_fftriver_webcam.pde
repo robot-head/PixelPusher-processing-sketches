@@ -15,7 +15,6 @@
 // Based off the code by Tom Gerhardt
 // thomas-gerhardt.com
 
-import hypermedia.net.*;
 import com.heroicrobot.dropbit.registry.*;
 import com.heroicrobot.dropbit.devices.pixelpusher.Pixel;
 import com.heroicrobot.dropbit.devices.pixelpusher.Strip;

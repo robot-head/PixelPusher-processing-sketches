@@ -14,6 +14,7 @@ void setup() {
   registry = new DeviceRegistry();
   observer = new PusherObserver();
   registry.addObserver(observer);
+  registry.setAntiLog(true);
   
   // set system look and feel 
   try { 

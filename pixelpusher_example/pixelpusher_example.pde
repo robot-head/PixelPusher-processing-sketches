@@ -47,6 +47,7 @@ void draw() {
   if (testObserver.hasStrips) {
         registry.startPushing();
         registry.setAutoThrottle(true);
+        registry.setAntiLog(true);
         int stripy = 0;
         List<Strip> strips = registry.getStrips();
         

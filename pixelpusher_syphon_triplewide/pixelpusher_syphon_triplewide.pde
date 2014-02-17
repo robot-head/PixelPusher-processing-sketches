@@ -2,7 +2,6 @@
 // jas strong, 6th Dec 2013.
 
 import codeanticode.syphon.*;
-
 import com.heroicrobot.dropbit.registry.*;
 import com.heroicrobot.dropbit.devices.pixelpusher.Pixel;
 import com.heroicrobot.dropbit.devices.pixelpusher.Strip;
@@ -39,8 +38,12 @@ void draw() {
   if (client.available()) {
     canvas = client.getGraphics(canvas);
     image(canvas, 0, 0, width, height);
-  }  
-  scrape();
+  }
+
+  // since we have each "sub-screen" in its own group, scrape for all three.  
+  scrape(1);
+  scrape(2);
+  scrape(3);
 }
 
 void stop()

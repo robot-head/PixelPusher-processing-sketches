@@ -19,7 +19,7 @@ import java.io.*;
 
 // board setting
 int canvas_cols = 240; // breite des boards
-int canvas_rows = 16; // höhe des boards (wird für bounce modus gebraucht)
+int canvas_rows = 8; // höhe des boards (wird für bounce modus gebraucht)
 
 // simulate
 int simulate_scale = 4;
@@ -59,7 +59,7 @@ void setup() {
   registry = new DeviceRegistry();
   testObserver = new TestObserver();
   registry.addObserver(testObserver);
-  frameRate(30);
+  frameRate(60);
   colorMode(HSB, 360, 100, 100);
   if (try_to_simulate || always_simulate) {
     size(canvas_cols*simulate_scale, canvas_rows*simulate_scale, P3D);
